@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+	<title>Maram Amamou</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="projet1.css" type="text/css">
+</head>
+<body id="p5">
+	<nav>
+		<a href="projet1.html">Home</a>
+		<a href="signIn.html">Sign In</a>
+		<a href="logIn.html" >Log In</a>
+		<a href="name.html">PERSONALITY TEST</a>
+		<a href="quiz.html">QUIZ</a>
+		<a href="why.html">WHY</a>
+		<a href="https://www.linkedin.com/in/maram-amamou-809757254/">Contact</a>
+	</nav>
+	<section id="bb">
+		<h2>Security check</h2>
+		<label><strong>To continue, please type the characters you see:</strong></label><br><br>
+		<div id="captcha"></div> <!-- The generated code will be displayed here -->
+		<br>
+		<label><strong>Characters:</strong></label>
+		<input type="text" name="codeUser" size="20" /><br>
+		<br>
+		<input type="button" value="Refresh" onclick="actCaptcha()" />
+		<input type="button" value="Click to start reservation !" onclick="valide()" />
+	</section>
+	<footer id="m">
+		<p> Adresse &nbsp : &nbsp Cité Sahloul 3 - RJQ4+C8V, Sousse &nbsp Tél&nbsp: &nbsp+216 99 613 048 / 56 127 028
+				<br> Contact us on: &nbsp &nbsp &nbsp &nbsp
+				<a href="maramamamou0@gmail.com"> Email</a> &nbsp &nbsp &nbsp &nbsp<a
+					href="https://www.facebook.com/maram.amamou0/"> Facebook </a>
+		</p>
+	</footer>
+	<script>
+		alphaNums = new Array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q',
+			'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
+			'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9');
+
+		function creerCaptcha() {
+			let captcha = "";
+			for (let i = 0; i < 8; i++) {
+				captcha += alphaNums[Math.floor(Math.random() * alphaNums.length)];
+			}
+			return captcha;
+		}
+
+		var chCaptcha = creerCaptcha();
+
+		function afficherCaptcha() {
+			document.getElementById("captcha").innerHTML = chCaptcha;
+			return chCaptcha;
+		}
+
+		var donnee = document.getElementsByName('codeUser');
+
+		function verifCaptcha() {
+			if (donnee[0].value == chCaptcha) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+		function actCaptcha() {
+			donnee[0].value = '';
+			chCaptcha = creerCaptcha();
+			afficherCaptcha();
+		}
+
+		function valide() {
+			var verif = verifCaptcha();
+			if (verif) {
+				window.location.href = "logIn.html";
+			} else {
+				alert("In terms of security, you have to correct your text first");
+			}
+		}
+	</script>
+</body>
+</html>
+

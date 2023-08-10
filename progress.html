@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reservation Progress - Overall Progress</title>
+  <style>
+    /* Your CSS styles here */
+  </style>
+</head>
+<body>
+  <h1>Overall Progress</h1>
+
+  <div id="progress-bar" class="progress-bar"></div>
+
+  <script>
+    // Calculate the completion percentage based on the completed steps
+    function calculateCompletionPercentage() {
+      const totalSteps = 4; // Update this value if you have a different number of steps
+      const completedSteps = Object.keys(localStorage).filter(key => key.startsWith('step')).length;
+      const completionPercentage = (completedSteps / totalSteps) * 100;
+
+      const progressBar = document.getElementById('progress-bar');
+      progressBar.style.width = completionPercentage + '%';
+      progressBar.innerText = 'Completion: ' + completionPercentage.toFixed(2) + '%';
+    }
+
+    // Call calculateCompletionPercentage initially to set the progress bar
+    calculateCompletionPercentage();
+  </script>
+</body>
+</html>

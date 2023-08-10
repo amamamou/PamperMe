@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CAPTCHA Example</title>
+  <meta charset="utf-8">
+  <style>
+    #captcha {
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    #captcha img {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    
+    #captcha input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    
+    #captcha button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    #captcha button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div id="captcha">
+    <img id="captchaImage" alt="CAPTCHA Image">
+    <br>
+    <input type="text" placeholder="Enter the CAPTCHA code" id="captchaInput" required>
+    <button onclick="checkCaptcha()">Submit</button>
+  </div>
+
+  <script src="captcha.js"></script>
+  <script>
+    function generateCaptcha() {
+      var captcha = new Captcha();
+      var captchaImage = document.getElementById('captchaImage');
+      captchaImage.src = captcha.getImage(); // Get the CAPTCHA image URL
+      return captcha.getCode(); // Get the CAPTCHA code
+    }
+
+    function checkCaptcha() {
+      var userInput = document.getElementById('captchaInput').value;
+      var correctCode = generateCaptcha(); // Generate a new CAPTCHA and get the correct code
+
+      if (userInput.toLowerCase() === correctCode.toLowerCase()) {
+        alert('CAPTCHA verification successful!'); // Replace with your desired action
+      } else {
+        alert('CAPTCHA verification failed. Please try again.'); // Replace with your desired action
+      }
+    }
+
+    // Generate the initial CAPTCHA when the page loads
+    window.onload = function() {
+      generateCaptcha();
+    };
+  </script>
+</body>
+</html>

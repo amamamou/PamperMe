@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Maram Amamou</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="projet1.css" type="text/css">
+  <style>
+    .r {
+      margin-top: 100px;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url(reserve.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      width: 400px;
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 14px; /* Adjust the margin-top value to move the form down */
+      margin-left: 500px;
+    }
+
+    .container h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    .container input[type="text"],
+    .container input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .container button {
+      width: 100%;
+      padding: 12px;
+      background-color: #126aae4e;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .container button:hover {
+      background-color: #730d64;
+    }
+
+   
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="projet1.html">Home</a>
+    <a href="signIn.html">Sign In</a>
+    <a href="logIn.html">Log In</a>
+    <a href="quiz.html">QUIZ</a>
+    <a href="why.html">WHY</a>
+    <a href="https://www.linkedin.com/in/maram-amamou-809757254/">Contact</a>
+  </nav>
+  <div class="container">
+    <form>
+      <h2>Duration and Preferences:</h2>
+
+      <label for="duration">How long would you like the treatment to be?</label>
+      <br>
+      <input type="radio" id="duration30" name="duration" value="30"> <label for="duration30">30 minutes</label>
+      <input type="radio" id="duration60" name="duration" value="60"> <label for="duration60">60 minutes</label>
+      <input type="radio" id="duration90" name="duration" value="90"> <label for="duration90">90 minutes</label>
+      <br><br>
+
+      <h2>Payment and Confirmation:</h2>
+      <label for="payment_method">What is your preferred payment method?</label>
+      <br>
+      <input type="checkbox" id="payment_cash" name="payment_method" value="cash"> <label for="payment_cash">Cash</label>
+      <input type="checkbox" id="payment_card" name="payment_method" value="card"> <label for="payment_card">Card</label>
+      <br><br>
+
+      <label for="confirmation_preference">Would you like to receive a confirmation email or text message?</label>
+      <br>
+      <input type="checkbox" id="confirmation_email" name="confirmation_preference" value="email"> <label for="confirmation_email">Email</label>
+      <input type="checkbox" id="confirmation_text" name="confirmation_preference" value="text"> <label for="confirmation_text">Text Message</label>
+      <br><br>
+
+      <h2>How did you hear about us?</h2>
+      <label for="referral_source">How did you learn about our spa?</label>
+      <br>
+      <input type="text" id="ttt" name="referral_source">
+      <br><br>
+
+      <h2>Contact Information:</h2>
+      <div class="flag-selector">
+        <select id="imageSelect">
+            <option value="tn.png">Tunisia</option>
+            <option value="uk.png">United Kingdom</option>
+            <option value="fr.png">France</option>
+          </select>
+          <input type="name" id="phone_number" name="phone_number">
+          </div>
+            
+  <div id="selectedImage">
+    <!-- The selected image will be displayed here -->
+  </div>
+  
+      <br><br>
+
+      <button><a href="date.html">CONTINUE</a></button>
+    </form>
+  </div>
+  <footer class="r">
+    <p>Adresse: Cité Sahloul 3 - RJQ4+C8V, Sousse
+      <br>
+      Tél: +216 99 613 048 / 56 127 028
+      <br>
+      Contact us on:
+      <a href="maramamamou0@gmail.com">Email</a>
+      <a href="https://www.facebook.com/maram.amamou0/">Facebook</a>
+    </p>
+  </footer>
+   
+
+  <script>
+    const imageSelect = document.getElementById('imageSelect');
+  
+
+    imageSelect.addEventListener('change', function() {
+      const selectedOption = imageSelect.options[imageSelect.selectedIndex];
+      const imageUrl = selectedOption.value;
+      imageSelect.innerHTML = `<img src="${imageUrl}" alt="Selected Image">`;
+    });
+  </script>
+</body>
+</html>

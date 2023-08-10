@@ -1,0 +1,200 @@
+<!doctype html>
+<html>
+<head>
+	<title> Maram Amamou </title>
+	<meta charset="utf-8">
+		<link rel="stylesheet" href="projet1.css" type="text/css">
+	<style>
+    /* Add some styling for the quiz page */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    
+    
+    
+    .question {
+      margin-bottom: 20px;
+    }
+    
+    .option {
+      margin-bottom: 10px;
+    }
+    
+    .submit {
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .result {
+      text-align: center;
+      display: none;
+      margin-top: 70px;
+    }
+    
+    .result-image {
+      margin-top: 10px;
+    }
+	.container {
+      width: 90%;
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 80px; /* Adjust the margin-top value to move the form down */
+   
+    }
+
+  
+	.a{
+		color:#d50b0b76;
+		margin-right:1000px;
+	}
+
+    .container input[type="text"],
+    .container input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .container button {
+      width: 100%;
+      padding: 12px;
+      background-color: #a723a98d;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .container button:hover {
+      background-color: #981a7076;
+    }
+  </style>
+
+</head>
+<body id="p3">
+	<form name="form" method="post" action="">
+	<nav>
+		<a href="projet1.html">Home</a>
+		<a href="signIn.html">Sign In</a>
+		<a href="logIn.html" >Log In</a>
+		<a href="quiz.html">PERSONALITY TEST</a>
+		<a href="why.html">WHY</a>
+	<a href="https://www.linkedin.com/in/maram-amamou-809757254/">Contact</a>
+	</nav>
+
+	<div class="container">
+		<form id="myForm">
+		  
+	<h2>Discover Your Fun Personality!</h2>
+  
+	
+  	<!-- Quiz Questions -->
+  	<div class="question">
+    	<p>Question 1: What is your spirit animal?</p>
+    	<div class="option">
+      		<input type="radio" name="q1" value="option1">Unicorn
+    	</div>
+    	<div class="option">
+      		<input type="radio" name="q1" value="option2">Dragon
+    	</div>
+    	<div class="option">
+      		<input type="radio" name="q1" value="option3">Phoenix
+    	</div>
+  	</div>
+
+  
+  	<div class="question">
+    	<p>Question 2: Which superpower would you choose?</p>
+    	<div class="option">
+      		<input type="radio" name="q2" value="option1">Invisibility
+    	</div>
+    	<div class="option">
+      		<input type="radio" name="q2" value="option2">Teleportation
+    	</div>
+    	<div class="option">
+      		<input type="radio" name="q2" value="option3">Telekinesis
+    	</div>
+  	</div>
+  
+  	<div class="question">
+    	<p>Question 3: Pick a favorite hobby:</p>
+    	<div class="option">
+      		<input type="radio" name="q3" value="option1">Reading
+    	</div>
+    	<div class="option">
+      		<input type="radio" name="q3" value="option2">Traveling
+    	</div>
+    	<div class="option">
+      		<input type="radio" name="q3" value="option3">Painting
+    	</div>
+  	</div>
+
+  
+  	<!-- Add more questions here -->
+  
+  	<!-- Submit button -->
+  	<div class="submit">
+  <button type="button" onclick="submitQuiz()">Click me ! </button>
+  </div>
+</div>
+</form>
+  	<!-- Result section -->
+  	<div class="result" id="result" style="display: none;">
+    	<h2 class="a">Result:</h2>
+    	<p id="resultText"> </p>
+    	<img class="result-image" id="resultImage" src="" alt="Result Image">
+  	</div>
+
+
+
+		<footer>
+		<p> Adresse &nbsp : &nbsp Cité Sahloul 3 - RJQ4+C8V, Sousse  &nbsp Tél&nbsp: &nbsp+216 99 613 048 / 56 127 028
+		<br>
+		Contact us on: &nbsp &nbsp &nbsp &nbsp 
+		<a href="maramamamou0@gmail.com"> Email</a>  &nbsp &nbsp &nbsp &nbsp<a href="https://www.facebook.com/maram.amamou0/>"> Facebook </a>
+	</footer>
+  
+  	<script>
+    	function submitQuiz() {
+      		// Get selected options
+      		var q1Answer = document.querySelector('input[name="q1"]:checked');
+      		var q2Answer = document.querySelector('input[name="q2"]:checked');
+      		var q3Answer = document.querySelector('input[name="q3"]:checked');
+      
+      		// Calculate result based on selected options
+      		var result = '';
+      		var resultImage = '';
+      
+      		if (q1Answer && q2Answer && q3Answer) {
+        		if (q1Answer.value === 'option1' && q2Answer.value === 'option1' && q3Answer.value === 'option1') {
+          			result = 'You are a magical unicorn! 🦄';
+          			resultImage = 'unicorn.jpg';
+        		} else if (q1Answer.value === 'option2' && q2Answer.value === 'option2' && q3Answer.value === 'option2') {
+          			result = 'You possess the power of a mighty dragon! 🐉';
+          			resultImage = 'dragon.jpg';
+        		} else if (q1Answer.value === 'option3' && q2Answer.value === 'option3' && q3Answer.value === 'option3') {
+          			result = 'You are reborn from the ashes like a phoenix! 🔥';
+          			resultImage = 'phoenix.jpg';
+        		} else {
+          			result = 'You have a unique and fun personality!';
+          			resultImage = 'generic.jpg';
+        		}
+      		}
+      
+      		// Display the result
+      		document.getElementById('resultText').textContent = result;
+      		document.getElementById('resultImage').src = resultImage;
+      		document.getElementById('result').style.display = 'block';
+    	}
+  	</script>
+</body>
+</html>
+

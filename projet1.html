@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+	<title> Maram Amamou </title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="projet1.css" type="text/css">
+</head>
+<body id="projet">
+	<form name="form" method="post" action="">
+	<header>
+		<h1><strong>Pamper Me Now: </strong>Secure Your Spa Appointment</h1>
+	</header>
+	<nav>
+		<a href="projet1.html">Home</a>
+		<a href="signIn.html">Sign In</a>
+		<a href="logIn.html" >Log In</a>
+		<a href="name.html">RESERVE</a>
+		<a href="quiz.html">PERSONALITY TEST</a>
+		<a href="why.html">WHY</a>
+		<a href="https://www.linkedin.com/in/maram-amamou-809757254/">Contact</a>
+	</nav>
+	<section>
+		<aside> 
+			<button class="b1"> <a href="p1.html"> SIGN IN </a> </button>
+			<button class="b2"> <a href="p3.html"> RESERVE </a> </button>
+		</aside>
+	</section>
+	<footer>
+		<p> Adresse &nbsp : &nbsp Cité Sahloul 3 - RJQ4+C8V, Sousse  &nbsp Tél&nbsp: &nbsp+216 99 613 048 / 56 127 028
+		<br>
+		Contact us on: &nbsp &nbsp &nbsp &nbsp 
+		<a href="maramamamou0@gmail.com"> Email</a>  &nbsp &nbsp &nbsp &nbsp<a href="https://www.facebook.com/maram.amamou0/>"> Facebook </a>
+	</footer>
+	</form>
+	<script>
+		// JavaScript code goes here
+		window.onload = function() {
+			var signInButton = document.querySelector('.b1');
+			var startQuizButton = document.querySelector('.b2');
+			
+			signInButton.addEventListener('click', function(event) {
+				event.preventDefault();
+				alert('Sign In button clicked!');
+				// Add your sign-in logic here
+			});
+			
+			startQuizButton.addEventListener('click', function(event) {
+				event.preventDefault();
+				alert('Reserve button clicked!');
+				// Add your quiz logic here
+			});
+		};
+	</script>
+</body>
+</html>	
+	

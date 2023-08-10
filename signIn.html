@@ -1,0 +1,277 @@
+<!doctype html>
+<html>
+<head>
+	<title>Maram Amamou</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="projet1.css" type="text/css">
+	<style>
+		.error {
+			color: red;
+		}
+	</style>
+</head>
+<body id="p1">
+	<nav>
+		<a href="projet1.html">Home</a>
+		<a href="signIn.html">Sign In</a>
+		<a href="logIn.html" >Log In</a>
+		<a href="name.html">RESERVE</a>
+		<a href="quiz.html">PERSONALITY TEST</a>
+		<a href="why.html">WHY</a>
+		<a href="https://www.linkedin.com/in/maram-amamou-809757254/">Contact</a>
+	</nav>
+
+	<section>
+		<div class="container">
+			<form name="form" method="post" action="">
+				<fieldset>
+					<legend>Personal Information</legend>
+					<div class="form-group">
+						<label for="x">Gender</label>
+						<div class="radio-group">
+							<input id="x" name="a" type="radio" required/>
+							<label for="x">Male</label>
+							<input id="x2" name="a" type="radio" required/>
+							<label for="x2">Female</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="z1">What is your name?</label>
+						<input name="a" id="z1" type="text" placeholder="Name" required pattern="[A-Za-z]+" title="Please enter a valid name (letters only)"/>
+						<span class="error"></span>
+					</div>
+					<div class="form-group">
+						<label for="z2">What is your first name?</label>
+						<input name="a" id="z2" type="text" placeholder="First name" required pattern="[A-Za-z]+" title="Please enter a valid first name (letters only)"/>
+						<span class="error"></span>
+					</div>
+					<div class="form-group">
+						<label for="z3">How old are you?</label>
+						<input name="a" id="z3" type="number" min="18" max="100" required/>
+						<small>Not allowed under 18 years old</small>
+						<span class="error"></span>
+					</div>
+					<div class="form-group">
+						<label for="z5">When is your birthday?</label>
+						<input name="a" id="z5" type="date" min="1950-01-01" max="2004-01-01" required/>
+						<span class="error"></span>
+					</div>
+					<div class="form-group">
+						<label for="z4">Which Continent Are You From?</label>
+						<select id="a1" name="p" size="2">
+							<option selected>Africa</option>
+							<option>Antarctica</option>
+							<option>Asia</option>
+							<option>Australia/Oceania</option>
+							<option>Europe</option>
+							<option>North America</option>
+							<option>South America</option>
+						</select>
+					</div>
+					<div class="form-group">
+					
+						<label for="z6">Are you from Tunisia?</label>
+						<div class="radio-group">
+							<input name="a" id="z6" type="radio" required/>
+							<label for="z6">Yes</label>
+							<input name="a" id="z7" type="radio" required/>
+							<label for="z7">No</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="z8">If yes, please select your governorate</label>
+						<select id="a1" name="p">
+							<option>Ariana</option>
+							<option>Béja</option>
+							<option>Ben Arous</option>
+							<option>Bizerte</option>
+							<option>Gabés</option>
+							<option>Gafsa</option>
+							<option>Jendouba</option>
+							<option>Kairouan</option>
+							<option>Kasserine</option>
+							<option>Kebili</option>
+							<option>Kéf</option>
+							<option>Mahdia</option>
+							<option>Manouba</option>
+							<option>Medenine</option>
+							<option>Monastir</option>
+							<option>Nabeul</option>
+							<option>Sfax</option>
+							<option>Sidi Bouzid</option>
+							<option>Siliana</option>
+							<option selected>Sousse</option>
+							<option>Tataouine</option>
+							<option>Tozeur</option>
+							<option>Tunis</option>
+							<option>Zaghouan</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="a1">Enter your email</label>
+						<input type="email" id="a1" name="p" required/>
+						<span class="error"></span>
+					</div>
+					<div class="form-group">
+						<label for="a2">Select a password</label>
+						<input type="password" id="a2" name="p" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Password must contain at least 8 characters, including at least one uppercase letter, one lowercase letter, and one digit"/>
+						<small>Password must contain at least 8 characters, including at least one uppercase letter, one lowercase letter, and one digit</small>
+						<span class="error"></span>
+					</div>
+				</fieldset>
+				<div class="form-group">
+					<input type="submit" name="bb" value="CONFIRM" id="b12"/>
+					<input type="reset" name="ab" value="RESET" id="b11"/>
+					
+					<label id="logi"> Already have an account  ? </label>
+						<a href="captcha.html"> Log in </a>
+					
+				</div>
+			</form>
+		</div>
+	</section>
+	<footer>
+		<p> Adresse &nbsp : &nbsp Cité Sahloul 3 - RJQ4+C8V, Sousse  &nbsp Tél&nbsp: &nbsp+216 99 613 048 / 56 127 028
+		<br>
+		Contact us on: &nbsp &nbsp &nbsp &nbsp 
+		<a href="maramamamou0@gmail.com"> Email</a>  &nbsp &nbsp &nbsp &nbsp<a href="https://www.facebook.com/maram.amamou0/>"> Facebook </a>
+	</footer>
+	<script>
+		// Validate form before submission
+		document.querySelector('form').addEventListener('submit', function(event) {
+			event.preventDefault();
+			if (validateForm()) {
+				// Form is valid, proceed with submission
+				this.submit();
+			}
+		});
+
+		// Form validation
+		function validateForm() {
+			var form = document.querySelector('form');
+			var inputs = form.querySelectorAll('input[required], select[required]');
+			var isValid = true;
+
+			for (var i = 0; i < inputs.length; i++) {
+				var input = inputs[i];
+				var errorSpan = input.nextElementSibling;
+
+				if (input.value.trim() === '') {
+					isValid = false;
+					errorSpan.textContent = 'This field is required';
+				} else {
+					errorSpan.textContent = '';
+				}
+			}
+
+			// Validate email format
+			var emailInput = form.querySelector('input[type="email"]');
+			if (emailInput.value.trim() !== '') {
+				if (!isValidEmail(emailInput.value.trim())) {
+					isValid = false;
+					emailInput.nextElementSibling.textContent = 'Please enter a valid email address';
+				} else {
+					emailInput.nextElementSibling.textContent = '';
+				}
+			}
+
+			// Validate password strength
+			var passwordInput = form.querySelector('input[type="password"]');
+			if (passwordInput.value.trim() !== '') {
+				if (!isValidPassword(passwordInput.value.trim())) {
+					isValid = false;
+					passwordInput.nextElementSibling.textContent = 'Password must contain at least 8 characters, including at least one uppercase letter, one lowercase letter, and one digit';
+				} else {
+					passwordInput.nextElementSibling.textContent = '';
+				}
+			}
+
+			// Validate name and first name format
+			var nameInputs = form.querySelectorAll('input[type="text"]');
+			for (var j = 0; j < nameInputs.length; j++) {
+				var nameInput = nameInputs[j];
+				if (nameInput.value.trim() !== '') {
+					if (!isValidName(nameInput.value.trim())) {
+						isValid = false;
+						nameInput.nextElementSibling.textContent = 'Please enter a valid name (letters only)';
+					} else {
+						nameInput.nextElementSibling.textContent = '';
+					}
+				}
+			}
+
+			return isValid;
+		}
+
+        
+		// Validate form before submission
+		document.querySelector('form').addEventListener('submit', function(event) {
+			event.preventDefault();
+			if (validateForm()) {
+				// Form is valid, proceed with submission
+				this.submit();
+			}
+		});
+
+		// Form validation
+		function validateForm() {
+			var form = document.querySelector('form');
+			var inputs = form.querySelectorAll('input[required], select[required]');
+			var isValid = true;
+
+			for (var i = 0; i < inputs.length; i++) {
+				var input = inputs[i];
+				var errorSpan = input.nextElementSibling;
+
+				if (input.value.trim() === '') {
+					isValid = false;
+					errorSpan.textContent = 'This field is required';
+				} else {
+					errorSpan.textContent = '';
+				}
+			}
+		}
+
+			// Validate email format
+			var emailInput = form.querySelector('input[type="email"]');
+			if (emailInput.value.trim() !== '') {
+				if (!isValidEmail(emailInput.value.trim())) {
+					isValid = false;
+					emailInput.nextElementSibling.textContent = 'Please enter a valid email address';
+				} else {
+					emailInput.nextElementSibling.textContent = '';
+				}
+			}
+
+			// Validate password strength
+			var passwordInput = form.querySelector('input[type="password"]');
+			if (passwordInput.value.trim() !== '') {
+				if (!isValidPassword(passwordInput.value.trim())) {
+					isValid = false;
+					passwordInput.nextElementSibling.textContent = 'Password must contain at least 8 characters, including at least one uppercase letter, one lowercase letter, and one digit';
+				} else {
+					passwordInput.nextElementSibling.textContent = '';
+				}
+			}
+
+			// Validate name format
+			var nameInputs = form.querySelectorAll('input[type="text"]');
+			for (var j = 0; j < nameInputs.length; j++) {
+				var nameInput = nameInputs[j];
+				if (nameInput.value.trim() !== '') {
+					if (!isValidName(nameInput.value.trim())) {
+						isValid = false;
+						nameInput.nextElementSibling.textContent = 'Please enter a valid name (letters only)';
+					} else {
+						nameInput.nextElementSibling.textContent = '';
+					}
+				}
+			}
+
+			return isValid;
+
+		
+	
+	</script>
+</body>
+</html>

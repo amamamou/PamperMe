@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .progress {
+      width: 100%;
+      height: 20px;
+      border: 1px solid #ccc;
+    }
+    
+    .progress-bar {
+      height: 100%;
+      width: 0;
+      background-color: #4CAF50;
+    }
+  </style>
+</head>
+<body>
+  <div class="progress">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <script>
+    function updateProgressBar(currentPage, totalPages) {
+      var progressBar = document.getElementById("progressBar");
+      var percentage = (currentPage / totalPages) * 100;
+      progressBar.style.width = percentage + "%";
+    }
+
+    // Receive progress update from the parent page
+    window.addEventListener("message", function(event) {
+      var data = event.data;
+      if (data && data.currentPage && data.totalPages) {
+        updateProgressBar(data.currentPage, data.totalPages);
+      }
+    });
+  </script>
+</body>
+</html>
